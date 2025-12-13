@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quotation Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>Classic Foundry Machineries and Automation</h2>
+  <p>Manufacturers & Suppliers of Foundry Equipments and Spares</p>
+</header>
+
+<div class="container">
+
+  <h3>Quotation Details</h3>
+
+  <div class="row">
+    <label>Quotation No:
+      <input type="text">
+    </label>
+
+    <label>Date:
+      <input type="date">
+    </label>
+  </div>
+
+  <label>Customer Name:
+    <input type="text">
+  </label>
+
+  <h3>Item Details</h3>
+
+  <table id="itemTable">
+    <tr>
+      <th>S.No</th>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>Unit Price (₹)</th>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td><input type="text"></td>
+      <td><input type="number" min="0"></td>
+      <td><input type="number" min="0" class="price"></td>
+    </tr>
+  </table>
+
+  <div class="btn-group">
+    <button type="button" onclick="addRow()">Add Item</button>
+    <button type="button" onclick="calculate()">Calculate Total</button>
+  </div>
+
+  <div class="result">
+    <p>Sub Total: ₹ <span id="subtotal">0.00</span></p>
+    <p>GST (18%): ₹ <span id="gst">0.00</span></p>
+    <p><strong>Grand Total: ₹ <span id="grand">0.00</span></strong></p>
+  </div>
+
+  <h3>Terms & Conditions</h3>
+<div class="terms">
+  <p>1. The ordered materials will be delivered within 6 to 7 working days from the date of order confirmation.</p>
+  <p>2. Full payment (100%) must be made in advance against the Proforma Invoice before dispatch.</p>
+  <p>3. Packing and forwarding charges will be charged additionally at actuals (approximately 3%).</p>
+  <p>4. GST at 18% will be charged extra as applicable.</p>
+  <p>5. Transportation shall be arranged by the customer at their cost.</p>
+  <p>6. This quotation is valid for a period of 25 days from the date of issue.</p>
+</div>
+
+  <div class="print-area">
+    <button onclick="window.print()">Print Quotation</button>
+  </div>
+
+</div>
+
+<footer>
+  <p>Authorised Signatory</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
