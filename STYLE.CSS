@@ -5,10 +5,30 @@ body {
 }
 
 header, footer {
-  text-align: center;
-  padding: 10px;
   background: #2c3e50;
   color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.company-logo {
+  height: 60px;
+}
+
+.company-text h2 {
+  margin: 0;
+}
+
+.company-text p {
+  margin: 3px 0 0;
+  font-size: 14px;
 }
 
 .container {
@@ -30,12 +50,9 @@ label {
 input {
   width: 100%;
   padding: 6px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin-top: 4px;
 }
 
-/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -52,17 +69,11 @@ th {
   background: #ecf0f1;
 }
 
-.btn-group {
-  margin-top: 10px;
-}
-
 button {
-  padding: 8px 15px;
-  margin-right: 10px;
+  padding: 6px 12px;
   background: #2c3e50;
   color: white;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -70,18 +81,27 @@ button:hover {
   background: #34495e;
 }
 
+.letter-content {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .result {
   margin-top: 15px;
 }
 
-.terms p {
-  margin: 5px 0;
+.page-break {
+  page-break-before: always;
 }
 
-/* ===== PRINT SETTINGS ===== */
+/* PRINT */
 @media print {
   button {
     display: none;
+  }
+
+  input {
+    border: none;
   }
 
   header, footer {
@@ -90,8 +110,8 @@ button:hover {
     border-bottom: 1px solid black;
   }
 
-  input {
-    border: none;
-    background: transparent;
+  @page {
+    size: A4 landscape;
+    margin: 15mm;
   }
 }
