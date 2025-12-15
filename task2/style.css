@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  background: #ccc;
+  font-family: "Times New Roman", serif;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  background: #fff;
+  margin: 20px auto;
+  padding: 20mm;
+  box-sizing: border-box;
+  position: relative;
+  page-break-after: always;
+}
+
+/* ===== WATERMARK ===== */
+.page::before {
+  content: "";
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 75%;
+  height: 75%;
+  background: url("watermark.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.20;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-left img { width: 200px; }
+.logo-right img { width: 160px; }
+
+.company-text { flex: 1; padding: 0 15px; }
+
+.company-text h1 {
+  color: #0056b3;
+  font-size: 18px;
+  margin: 0;
+}
+
+.address { color: #ff6600; }
+.gst { color: #0056b3; font-weight: bold; }
+.email a { color: #0000cc; }
+.phone { color: #ff6600; }
+
+.line { border-top: 1px solid #000; margin: 10px 0; }
+
+.quote-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.subject {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
+
+.justify { text-align: justify; }
+
+/* TABLE */
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.quote-table th,
+.quote-table td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+.quote-table th { color: #0056b3; }
+
+.center { text-align: center; }
+
+.arrow-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.arrow-list li {
+  padding-left: 18px;
+  position: relative;
+}
+
+.arrow-list li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+}
+
+/* PAGE 3 */
+.terms-title {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 35px 0 25px;
+}
+
+.terms-table {
+  width: 70%;
+  margin-left: 40px;
+}
+
+.terms-note { margin: 40px; }
+
+.thanks,
+.company-name,
+.signatory {
+  margin-left: 40px;
+}
+
+.signatory { margin-top: 50px; }
+
+/* FOOTER */
+.footer {
+  position: absolute;
+  bottom: 35mm;
+  width: calc(100% - 40mm);
+  text-align: center;
+}
+
+.footer-line {
+  height: 3px;
+  background: #7a1f1f;
+}
+
+.footer-text {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.page-no {
+  position: absolute;
+  bottom: 15mm;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media print {
+  body { background: none; }
+  .page { margin: 0; }
+}
+
+
+/* ===== FIX FOOTER OVERLAP ON PAGE 2 ===== */
+.footer-page-2 {
+  bottom: 20mm;   /* push footer down */
+}
+
