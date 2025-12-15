@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quotation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+  <div class="header-flex">
+    <img src="Logo.png" alt="Company Logo" class="company-logo">
+    <div class="company-text">
+      <h2>Classic Foundry Machineries and Automation</h2>
+      <p>Manufacturers & Suppliers of Foundry Equipments and Spares</p>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="row">
+    <label>Quotation No:
+      <input type="text">
+    </label>
+
+    <label>Date:
+      <input type="date" id="quoteDate">
+    </label>
+  </div>
+
+  <label>Customer Name:
+    <input type="text">
+  </label>
+
+  <hr>
+
+  <!-- LETTER CONTENT -->
+  <div class="letter-content">
+    <p><strong>Dear Sir / Madam,</strong></p>
+
+    <p>
+      We thank you for your enquiry and are pleased to submit our quotation for the
+      required foundry machinery equipment and spares.
+    </p>
+
+    <p>
+      The items quoted are manufactured as per industry standards and we assure
+      you of our best quality, competitive pricing, and timely delivery.
+    </p>
+
+    <p>
+      Thanking you,<br>
+      <strong>Yours faithfully,</strong><br><br>
+      <strong>Classic Foundry Machineries and Automation</strong>
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- ITEM TABLE -->
+  <h3>Item Details</h3>
+
+  <table id="itemTable">
+    <tr>
+      <th>S.No</th>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>Unit Price (₹)</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><input type="text"></td>
+      <td><input type="number" min="0"></td>
+      <td><input type="number" min="0"></td>
+      <td><button onclick="removeRow(this)">Remove</button></td>
+    </tr>
+  </table>
+
+  <div class="btn-group">
+    <button onclick="addRow()">Add Item</button>
+    <button onclick="calculate()">Calculate</button>
+  </div>
+
+  <!-- TOTALS -->
+  <div class="result">
+    <p>Sub Total: ₹ <span id="subtotal">0.00</span></p>
+    <p>GST (18%): ₹ <span id="gst">0.00</span></p>
+    <p><strong>Grand Total: ₹ <span id="grand">0.00</span></strong></p>
+    <p><strong>Amount in Words:</strong> <span id="words"></span></p>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- TERMS -->
+  <h3>Terms & Conditions</h3>
+  <div class="terms">
+    <p>1. Delivery within 6–7 working days.</p>
+    <p>2. 100% advance payment required.</p>
+    <p>3. Packing charges extra (~3%).</p>
+    <p>4. GST @18% extra.</p>
+    <p>5. Transportation by customer.</p>
+    <p>6. Quotation valid for 25 days.</p>
+  </div>
+
+  <button onclick="window.print()">Print / Save PDF</button>
+
+</div>
+
+<footer>
+  <p>Authorised Signatory</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
